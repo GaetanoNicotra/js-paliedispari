@@ -10,8 +10,15 @@ console.log(userWord);
 // verifico se la parola inserita è palindroma
 // dichiaro una funzione
 
-//function verificationWord(){
+//function verificationWord() {
     userWordReversed = userWord.split("")
     userWordReversed.reverse()
     console.log(userWordReversed);
 
+if(userWord == userWordReversed){
+    console.log("La parola è PALINDROMA")
+
+}
+ else{
+    console.log("La parola non è PALINDROMA")
+ }
