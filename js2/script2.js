@@ -19,15 +19,17 @@ let risultatoRandom = randomNumber()
 //for(;sceltaUtente < 1 || sceltaUtente > 6;){
 //sceltaUtente = parseInt(prompt('ERRORE: Hai inserito zero o un numero maggiore di 6'))
 
-// controllo la somma e restituisco l'esito della giocata
+// stampo il risultato della somma richiamando la funzione sum 
 
 let risultatoSomma = controllo(sceltaNumeroUtente, risultatoRandom)
 console.log('La somma dei numeri è = ' + ' ' +risultatoSomma )
 
-if (sceltaUtente == sum) {
+// verifico se l'utente ha vinto 
+
+if (risultatoSomma == false && sceltaUtente == 'dispari') {
     console.log('Hai Vinto')
 }
-else {
+else if(risultatoSomma == true && sceltaUtente == 'pari') {
     console.log('Hai perso')
 }
 
@@ -45,12 +47,10 @@ function randomNumber() {
 }
 
 function controllo(a, b,) {
-    sum = a + b;
-    if ((a + b) % 3 == 0) {
-        
+    let sum = a + b;
+    let esito = true;
+    if (sum % 3 == 0) {
+        esito = false;
     }
-    else if ((a + b) % 2 == 0) {
-        
-    }
-    return sum;
+    return esito;
 }
