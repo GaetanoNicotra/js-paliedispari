@@ -4,10 +4,8 @@
 // dichiaro una variabile
 
 let userWord = prompt('Inserisci la parola che vuoi analizzare');
-let userWord2 = userWord.split("")
-userWord2 = userWord2.toString()
 let userWordReversed = [];
-console.log(userWord2);
+console.log(userWord);
 
 // verifico se la parola inserita è palindroma
 // dichiaro una funzione
@@ -16,10 +14,10 @@ console.log(userWord2);
 
 userWordReversed = userWord.split("")
 userWordReversed.reverse()
-userWordReversed = userWordReversed.toString()
+userWordReversed = userWordReversed.join("")
 console.log(userWordReversed);
 
-if (userWord2 == userWordReversed) {
+if (userWord == userWordReversed) {
     console.log("La parola è PALINDROMA")
 
 }
