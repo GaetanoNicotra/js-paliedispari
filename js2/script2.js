@@ -2,7 +2,7 @@
 
 // chiedo all'utente di scegliere pari o dispari
 
-let sceltaUtente = prompt("Scegli Pari o Dispari");
+let sceltaUtente = prompt("Scegli Pari o Dispari").toLowerCase();
 console.log('Hai scelto' + ' ' + sceltaUtente);
 
 // chiedo all'utente di scegliere un numero da 1 a 5
@@ -15,24 +15,29 @@ console.log('Il tuo numero è' + ' ' + sceltaNumeroUtente);
 let risultatoRandom = randomNumber()
 
 // verifico se il numero inserito dall'utente è compreso tra 1 e 5
-// creo un ciclo for
-//for(;sceltaUtente < 1 || sceltaUtente > 6;){
-//sceltaUtente = parseInt(prompt('ERRORE: Hai inserito zero o un numero maggiore di 6'))
 
-// stampo il risultato della somma richiamando la funzione sum 
-
-let risultatoSomma = controllo(sceltaNumeroUtente, risultatoRandom)
-console.log('La somma dei numeri è = ' + ' ' +risultatoSomma )
-
-// verifico se l'utente ha vinto 
-
-if (risultatoSomma == false && sceltaUtente == 'dispari') {
-    console.log('Hai Vinto')
+if (sceltaUtente < 1 || sceltaUtente > 5) {
+    console.log('ERRORE: Hai inserito zero o un numero maggiore di 6');
 }
-else if(risultatoSomma == true && sceltaUtente == 'pari') {
-    console.log('Hai perso')
-}
+else {
 
+    // stampo il risultato della somma richiamando la funzione sum 
+
+    let risultatoSomma = controllo(sceltaNumeroUtente, risultatoRandom)
+    console.log('La somma dei numeri è =' + ' ' + risultatoSomma)
+
+    // verifico se l'utente ha vinto 
+
+    if (risultatoSomma === 'dispari' && sceltaUtente === 'dispari') {
+        console.log('Hai Vinto')
+    }
+    else if (risultatoSomma === 'pari' && sceltaUtente === 'pari') {
+        console.log('Hai vinto')
+    }
+    else {
+        console.log('Hai perso')
+    }
+}
 
 
 // *******  FUNZIONI  *******
@@ -46,11 +51,15 @@ function randomNumber() {
     return valoreGenerato;
 }
 
+// funzione per sommare due numeri e capire se la somma è Ppari o dispari
+// dichiaro la funzione
+
 function controllo(a, b,) {
     let sum = a + b;
-    let esito = true;
-    if (sum % 3 == 0) {
-        esito = false;
+    if (sum % 2 === 0) {
+        return 'pari';
     }
-    return esito;
+    else {
+        return 'dispari';
+    }
 }
