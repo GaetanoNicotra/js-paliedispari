@@ -5,7 +5,7 @@
 
 let userWord = prompt('Inserisci la parola che vuoi analizzare');
 
-console.log(userWord);
+console.log(userWord + ' ' + 'Parola originale');
 
 // richiamo la funzione
 
@@ -28,6 +28,6 @@ function verificationWord(word) {
     userWordReversed = word.split("")
     userWordReversed.reverse()
     userWordReversed = userWordReversed.join("")
-    console.log(userWordReversed);
+    console.log(userWordReversed + ' ' + 'parola invertita');
     return userWordReversed;
 }
