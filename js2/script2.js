@@ -16,7 +16,7 @@ let risultatoRandom = randomNumber()
 
 // verifico se il numero inserito dall'utente è compreso tra 1 e 5
 
-if (sceltaUtente < 1 || sceltaUtente > 5) {
+if (sceltaNumeroUtente < 1 || sceltaNumeroUtente > 5) {
     console.log('ERRORE: Hai inserito zero o un numero maggiore di 6');
 }
 else {
